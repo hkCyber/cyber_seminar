@@ -1,5 +1,5 @@
 # e-Statから取得したデータをまとめるCSVファイルパス
-csv_filepath_for_beer_expenses = 'your/filepath/for/beer2006-2016y.csv'
+csv_filepath_for_beer_expenses = 'csv_files/beer2006-2016y.csv'
 
 # e-Statから取得したデータを格納するファイルパス
 # {}/{}は %Y/%-m を予定してます

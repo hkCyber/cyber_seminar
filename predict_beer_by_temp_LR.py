@@ -34,7 +34,7 @@ model.fit(x, y)
 
 # 予測のためのサンプルとその表示
 for i in range(1, 34):
-    source = [[33]]
+    source = [[i]]
     predicted = model.predict(source)
     print("予測した値: ")
     print('x(気温):', source)
