@@ -15,8 +15,8 @@ df2 = pd.read_csv(conf.csv_filepath_for_beer_expenses, encoding="utf-8")
 df = pd.merge(df1, df2, on=['年', '月', '日'])
 
 # クリスマスから忘年会のシーズンとお盆のお供え物を買うシーズンを除外
-df = df[(df['月'] < 12) & (df['日'] < 24)]
-df = df[((df['月'] > 8) | (df['月'] < 8)) & (df['日'] > 14) | (df['日'] < 12)]
+df = df.drop(df[(df['月'] == 8) & ((df['日'] >= 12) & (df['日'] <= 14))].index)
+df = df.drop(df[(df['月'] == 12) & (df['日'] >= 24)].index)
 
 # データを学習用とテスト用に分割する
 train_year = (df["年"] <= 2015)
